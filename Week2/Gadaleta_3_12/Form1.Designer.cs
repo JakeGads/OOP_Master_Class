@@ -30,20 +30,20 @@ namespace Gadaleta_3_12
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.paint_required_label = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labour_hours_label = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.paint_cost_label = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.labour_cost_label = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.total_cost_label = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Gallon_Cost_Input = new System.Windows.Forms.TextBox();
             this.Square_Footage_Input = new System.Windows.Forms.TextBox();
+            this.Gallon_Cost_Input = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.total_cost_label = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.labour_cost_label = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.paint_cost_label = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labour_hours_label = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.paint_required_label = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,104 +79,21 @@ namespace Gadaleta_3_12
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 0;
             // 
-            // label1
+            // Square_Footage_Input
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 275);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Square Footage";
+            this.Square_Footage_Input.Location = new System.Drawing.Point(51, 307);
+            this.Square_Footage_Input.Name = "Square_Footage_Input";
+            this.Square_Footage_Input.Size = new System.Drawing.Size(155, 23);
+            this.Square_Footage_Input.TabIndex = 4;
+            this.Square_Footage_Input.TextChanged += new System.EventHandler(this.Square_Footage_Input_TextChanged);
             // 
-            // label2
+            // Gallon_Cost_Input
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Paint Required (Gallons)";
-            // 
-            // paint_required_label
-            // 
-            this.paint_required_label.AutoSize = true;
-            this.paint_required_label.Location = new System.Drawing.Point(283, 64);
-            this.paint_required_label.Name = "paint_required_label";
-            this.paint_required_label.Size = new System.Drawing.Size(13, 15);
-            this.paint_required_label.TabIndex = 1;
-            this.paint_required_label.Text = "0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(109, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Labour Hours";
-            // 
-            // labour_hours_label
-            // 
-            this.labour_hours_label.AutoSize = true;
-            this.labour_hours_label.Location = new System.Drawing.Point(283, 99);
-            this.labour_hours_label.Name = "labour_hours_label";
-            this.labour_hours_label.Size = new System.Drawing.Size(13, 15);
-            this.labour_hours_label.TabIndex = 3;
-            this.labour_hours_label.Text = "0";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(109, 137);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 15);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Paint Cost";
-            // 
-            // paint_cost_label
-            // 
-            this.paint_cost_label.AutoSize = true;
-            this.paint_cost_label.Location = new System.Drawing.Point(283, 137);
-            this.paint_cost_label.Name = "paint_cost_label";
-            this.paint_cost_label.Size = new System.Drawing.Size(13, 15);
-            this.paint_cost_label.TabIndex = 5;
-            this.paint_cost_label.Text = "0";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(109, 172);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 15);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Labour Cost";
-            // 
-            // labour_cost_label
-            // 
-            this.labour_cost_label.AutoSize = true;
-            this.labour_cost_label.Location = new System.Drawing.Point(283, 172);
-            this.labour_cost_label.Name = "labour_cost_label";
-            this.labour_cost_label.Size = new System.Drawing.Size(13, 15);
-            this.labour_cost_label.TabIndex = 7;
-            this.labour_cost_label.Text = "0";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(109, 214);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 15);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Total";
-            // 
-            // total_cost_label
-            // 
-            this.total_cost_label.AutoSize = true;
-            this.total_cost_label.Location = new System.Drawing.Point(283, 214);
-            this.total_cost_label.Name = "total_cost_label";
-            this.total_cost_label.Size = new System.Drawing.Size(13, 15);
-            this.total_cost_label.TabIndex = 9;
-            this.total_cost_label.Text = "0";
+            this.Gallon_Cost_Input.Location = new System.Drawing.Point(51, 64);
+            this.Gallon_Cost_Input.Name = "Gallon_Cost_Input";
+            this.Gallon_Cost_Input.Size = new System.Drawing.Size(155, 23);
+            this.Gallon_Cost_Input.TabIndex = 3;
+            this.Gallon_Cost_Input.TextChanged += new System.EventHandler(this.Gallon_Cost_Input_TextChanged);
             // 
             // label3
             // 
@@ -187,21 +104,104 @@ namespace Gadaleta_3_12
             this.label3.TabIndex = 2;
             this.label3.Text = "Paint Cost per Gallon";
             // 
-            // Gallon_Cost_Input
+            // label1
             // 
-            this.Gallon_Cost_Input.Location = new System.Drawing.Point(51, 64);
-            this.Gallon_Cost_Input.Name = "Gallon_Cost_Input";
-            this.Gallon_Cost_Input.Size = new System.Drawing.Size(155, 23);
-            this.Gallon_Cost_Input.TabIndex = 3;
-            this.Gallon_Cost_Input.TextChanged += new System.EventHandler(this.Gallon_Cost_Input_TextChanged);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(83, 275);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Square Footage";
             // 
-            // Square_Footage_Input
+            // total_cost_label
             // 
-            this.Square_Footage_Input.Location = new System.Drawing.Point(51, 307);
-            this.Square_Footage_Input.Name = "Square_Footage_Input";
-            this.Square_Footage_Input.Size = new System.Drawing.Size(155, 23);
-            this.Square_Footage_Input.TabIndex = 4;
-            this.Square_Footage_Input.TextChanged += new System.EventHandler(this.Square_Footage_Input_TextChanged);
+            this.total_cost_label.AutoSize = true;
+            this.total_cost_label.Location = new System.Drawing.Point(283, 214);
+            this.total_cost_label.Name = "total_cost_label";
+            this.total_cost_label.Size = new System.Drawing.Size(13, 15);
+            this.total_cost_label.TabIndex = 9;
+            this.total_cost_label.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(109, 214);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 15);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Total";
+            // 
+            // labour_cost_label
+            // 
+            this.labour_cost_label.AutoSize = true;
+            this.labour_cost_label.Location = new System.Drawing.Point(283, 172);
+            this.labour_cost_label.Name = "labour_cost_label";
+            this.labour_cost_label.Size = new System.Drawing.Size(13, 15);
+            this.labour_cost_label.TabIndex = 7;
+            this.labour_cost_label.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(109, 172);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 15);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Labour Cost";
+            // 
+            // paint_cost_label
+            // 
+            this.paint_cost_label.AutoSize = true;
+            this.paint_cost_label.Location = new System.Drawing.Point(283, 137);
+            this.paint_cost_label.Name = "paint_cost_label";
+            this.paint_cost_label.Size = new System.Drawing.Size(13, 15);
+            this.paint_cost_label.TabIndex = 5;
+            this.paint_cost_label.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(109, 137);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 15);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Paint Cost";
+            // 
+            // labour_hours_label
+            // 
+            this.labour_hours_label.AutoSize = true;
+            this.labour_hours_label.Location = new System.Drawing.Point(283, 99);
+            this.labour_hours_label.Name = "labour_hours_label";
+            this.labour_hours_label.Size = new System.Drawing.Size(13, 15);
+            this.labour_hours_label.TabIndex = 3;
+            this.labour_hours_label.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(109, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Labour Hours";
+            // 
+            // paint_required_label
+            // 
+            this.paint_required_label.AutoSize = true;
+            this.paint_required_label.Location = new System.Drawing.Point(283, 64);
+            this.paint_required_label.Name = "paint_required_label";
+            this.paint_required_label.Size = new System.Drawing.Size(13, 15);
+            this.paint_required_label.TabIndex = 1;
+            this.paint_required_label.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(109, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Paint Required (Gallons)";
             // 
             // Form1
             // 

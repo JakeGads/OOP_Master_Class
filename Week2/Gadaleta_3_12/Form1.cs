@@ -12,9 +12,8 @@ using System.Windows;
 namespace Gadaleta_3_12
 {
     public partial class Form1 : Form
-    {
-        double paint_cost = 1;
-        double square_footage = 1;
+    { 
+
         public Form1()
         {
             InitializeComponent();
@@ -22,65 +21,82 @@ namespace Gadaleta_3_12
 
         private void Gallon_Cost_Input_TextChanged(object sender, EventArgs e)
         {
-            try
+            if (check_valid_text(this.Gallon_Cost_Input.Text))
             {
-                if (Convert.ToDouble(this.Gallon_Cost_Input.Text) > 0)
-                {
-                    paint_cost = Convert.ToDouble(this.Gallon_Cost_Input.Text);
-                }
-                else
-                {
-                    MessageBox.Show("ERROR", "Gallon must be a number greater than 0");
-                }
-            } catch (Exception err)
-            {
-                MessageBox.Show("ERROR", "Gallon must be a number greater than 0");
-                this.Gallon_Cost_Input.Text = "" + 1;
-                paint_cost = Convert.ToDouble(this.Gallon_Cost_Input.Text);
+                calculate();
             }
-
-            this.calculate();
+            else
+            {
+                this.Gallon_Cost_Input.Text = "" + 1;
+                calculate();
+            }
         }
 
         private void Square_Footage_Input_TextChanged(object sender, EventArgs e)
         {
-            try
+            if (check_valid_text(this.Square_Footage_Input.Text))
             {
-                if (Convert.ToDouble(this.Square_Footage_Input.Text) > 0)
-                {
-                    square_footage = Convert.ToDouble(this.Square_Footage_Input.Text);
-                }
-                else
-                {
-                    MessageBox.Show("ERROR", "Square Footage must be a number greater than 0");
-                    this.Square_Footage_Input.Text = "" + 1;
-                }
+                calculate();
             }
-            catch (Exception err)
+            else
             {
-                MessageBox.Show("ERROR", "Square Footage must be a number greater than 0");
                 this.Square_Footage_Input.Text = "" + 1;
-                square_footage = Convert.ToDouble(this.Square_Footage_Input.Text);
+                calculate();
             }
+        }
+        
+        /// <summary>
+        /// checks if all the characters in a String are numeric
+        /// </summary>
+        /// <param name="entry">
+        /// the string should be Textbox.Text
+        /// </param>
+        /// <returns>
+        /// booelan ednoting if the regex is matched
+        /// </returns>
+        private bool check_valid_text(String entry)
+        {
+            return entry.All(char.IsDigit) && entry.Length > 0;
+        }
 
-            this.calculate();
+        private String ez_format(double x)
+        {
+            return String.Format("{0:0.00}", x);
         }
 
         private void calculate()
         {
-            if(this.square_footage < 115)
+            double gallon_cost, square_footage;
+
+            if(check_valid_text(this.Square_Footage_Input.Text) && Double.Parse(this.Square_Footage_Input.Text) > 115)
             {
-                this.square_footage = 115; // makes sure that at least one is required
+                square_footage = Double.Parse(this.Square_Footage_Input.Text);
+            }
+            else
+            {
+                square_footage = 115;
             }
 
-            double gallons = this.square_footage / 115;
-            double labor = gallons * 8;
-            this.paint_required_label.Text = $"{gallons} Gallons";
-            this.labour_hours_label.Text = $"{labor} Hours";
-            this.paint_cost_label.Text = $"${gallons * this.paint_cost}";
-            this.labour_cost_label.Text = $"${labor * 20}";
-            this.total_cost_label.Text = $"${String.Format("{0:0.00}", Convert.ToDouble(this.paint_cost_label.Text) + Convert.ToDouble(this.labour_cost_label.Text))}";
-        }
+            if (check_valid_text(this.Gallon_Cost_Input.Text) && Double.Parse(this.Gallon_Cost_Input.Text) > 0)
+            {
+                gallon_cost = Double.Parse(this.Gallon_Cost_Input.Text);
+            }
+            else
+            {
+                gallon_cost = 1;
+            }
 
+            double required_gallon = square_footage / 115;
+            double required_hours = required_gallon * 8;
+            double paint_cost = required_gallon * gallon_cost;
+            double labour_cost = required_hours * 20;
+            double total = paint_cost + labour_cost;
+
+            this.paint_required_label.Text =  $" {ez_format(required_gallon)} Gallons";
+            this.labour_hours_label.Text = $" {ez_format(required_hours)} Hours";
+            this.paint_cost_label.Text = $"${ez_format(paint_cost)}";
+            this.labour_cost_label.Text = $"${ez_format(labour_cost)}";
+            this.total_cost_label.Text = $"${ez_format(total)}";
+        }
     }
 }
