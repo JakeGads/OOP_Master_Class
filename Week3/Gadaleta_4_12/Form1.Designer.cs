@@ -29,13 +29,33 @@ namespace Gadaleta_4_12
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.Conferences_lb = new System.Windows.Forms.ListBox();
+            this.SuspendLayout();
+            // 
+            // Conferences_lb
+            // 
+            this.Conferences_lb.FormattingEnabled = true;
+            this.Conferences_lb.ItemHeight = 15;
+            this.Conferences_lb.Location = new System.Drawing.Point(13, 13);
+            this.Conferences_lb.Name = "Conferences_lb";
+            this.Conferences_lb.Size = new System.Drawing.Size(171, 169);
+            this.Conferences_lb.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Conferences_lb);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox Conferences_lb;
     }
 }
 
