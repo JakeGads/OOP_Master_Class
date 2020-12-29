@@ -233,6 +233,7 @@ namespace Gadaleta_6_5
             // 
             this.Total_tf.Location = new System.Drawing.Point(149, 119);
             this.Total_tf.Name = "Total_tf";
+            this.Total_tf.ReadOnly = true;
             this.Total_tf.Size = new System.Drawing.Size(166, 23);
             this.Total_tf.TabIndex = 7;
             // 
@@ -240,6 +241,7 @@ namespace Gadaleta_6_5
             // 
             this.Parts_Tax_tf.Location = new System.Drawing.Point(149, 89);
             this.Parts_Tax_tf.Name = "Parts_Tax_tf";
+            this.Parts_Tax_tf.ReadOnly = true;
             this.Parts_Tax_tf.Size = new System.Drawing.Size(166, 23);
             this.Parts_Tax_tf.TabIndex = 6;
             // 
@@ -247,6 +249,7 @@ namespace Gadaleta_6_5
             // 
             this.Parts_Cost_tf.Location = new System.Drawing.Point(149, 59);
             this.Parts_Cost_tf.Name = "Parts_Cost_tf";
+            this.Parts_Cost_tf.ReadOnly = true;
             this.Parts_Cost_tf.Size = new System.Drawing.Size(166, 23);
             this.Parts_Cost_tf.TabIndex = 5;
             // 
@@ -254,6 +257,7 @@ namespace Gadaleta_6_5
             // 
             this.Service_Labour_Cost_tf.Location = new System.Drawing.Point(149, 30);
             this.Service_Labour_Cost_tf.Name = "Service_Labour_Cost_tf";
+            this.Service_Labour_Cost_tf.ReadOnly = true;
             this.Service_Labour_Cost_tf.Size = new System.Drawing.Size(166, 23);
             this.Service_Labour_Cost_tf.TabIndex = 4;
             // 
