@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadaleta_9_2", "Gadaleta_9_2.csproj", "{48767B03-2CAA-46F0-838C-5F473813377C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48767B03-2CAA-46F0-838C-5F473813377C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48767B03-2CAA-46F0-838C-5F473813377C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48767B03-2CAA-46F0-838C-5F473813377C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48767B03-2CAA-46F0-838C-5F473813377C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {867CB7D4-CBAA-4F2B-B982-B8795BDC3315}
+	EndGlobalSection
+EndGlobal
