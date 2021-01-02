@@ -1,1 +1,5 @@
 <!-- For the discussion for Week 1, you will be reviewing different versions of Visual Studio.  For this course we will be using Visual Studio Community, however there is also a version called Visual Studio Code which is a more basic version of the software.  For the initial post, give at least 2 benefits of using VS Code instead of VS Community.  For the response post, review one of your classmates posts and give a reason why Code may not be as beneficial at Studio.  Be sure to be in depth and support your posts with justifications. -->
+
+## VS Code
+
+For starters I love VS code, I use it in the day to day as a general text editor, I write a lot of python, javascript, sometimes Java, and Markdown its pretty great. Even this version of VS has sub versions and I often stick with the OSS (Open Source Software) version of the code. Whats really cool about VS Code is 
