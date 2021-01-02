@@ -6,10 +6,12 @@ namespace Gadaleta_11_2
 {
     class ShiftSupervisor: Employee
     {
+        // members
         public int shift_number { get; set; }
         public double salary { get; set; }
         public double bonus { get; set; }
 
+        // full constructor
         public ShiftSupervisor(String name, int number, int shift_number, double salary, double bonus): base(name, number)
         {
             this.shift_number = shift_number;

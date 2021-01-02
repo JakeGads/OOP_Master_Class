@@ -85,7 +85,6 @@ namespace Gadaleta_5_5
             this.Answer_label.Size = new System.Drawing.Size(79, 15);
             this.Answer_label.TabIndex = 3;
             this.Answer_label.Text = "000000000000";
-            this.Answer_label.Click += new System.EventHandler(this.Answer_label_Click);
             // 
             // Form1
             // 

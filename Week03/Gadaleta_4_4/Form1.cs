@@ -12,7 +12,7 @@ namespace Gadaleta_4_4
 {
     public partial class Form1 : Form
     {
-        String primary, secondary;
+        String a, b;
         public Form1()
         {
             InitializeComponent();
@@ -20,31 +20,39 @@ namespace Gadaleta_4_4
 
         private void Mixer_btn_Click(object sender, EventArgs e)
         {
-            this.primary = this.Primary_Box.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
-            this.secondary = this.Secondary_Box.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+            // text in both the clicked first and second boxes
+            this.a = this.Primary_Box.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+            this.b = this.Secondary_Box.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+
 
             if (check_color_full("red"))
             {
+                // both red
                 this.BackColor = Color.Red;
             }
             else if (check_color_full("blue"))
             {
+                // both blue
                 this.BackColor = Color.Blue;
             }
             else if (check_color_full("yellow"))
             {
+                // both yellow
                 this.BackColor = Color.Yellow;
             }
             else if (check_color("red") && check_color("blue"))
             {
+                // checks if one is red and one is blue
                 this.BackColor = Color.Purple;
             }
             else if (check_color("red") && check_color("yellow"))
             {
+                // checks if one is red and one is yellow
                 this.BackColor = Color.OrangeRed;
             }
             else if (check_color("blue") && check_color("yellow"))
             {
+                // checks if one is blue and one is yellow
                 this.BackColor = Color.Green;
             }
 
@@ -52,13 +60,15 @@ namespace Gadaleta_4_4
 
         public bool check_color(String test)
         {
-            return this.primary.Equals(test) || this.secondary.Equals(test);
+            // or means either, so if a is color or if b is color it will work properly
+            return this.a.Equals(test) || this.b.Equals(test);
         }
 
 
         public bool check_color_full(String test)
         {
-            return this.primary.Equals(test) && this.secondary.Equals(test);
+            // add means that it requires both a + b to be equal to whatever color was passed
+            return this.a.Equals(test) && this.b.Equals(test);
         }
     }
 }

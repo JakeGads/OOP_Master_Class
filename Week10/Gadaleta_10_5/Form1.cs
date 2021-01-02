@@ -16,8 +16,7 @@ namespace Gadaleta_10_5
         {
             InitializeComponent();
 
-            //TODO may need some tweaking
-
+            // assigns the data source to a new array
             this.dataGridView1.DataSource = new RetailItem[]
             {
                 new RetailItem("Jacket", 12, 59.95),
