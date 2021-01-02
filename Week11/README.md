@@ -1,0 +1,1 @@
+<!-- For this discussion, we will be researching the concept of polymorphism.  For the initial post, discuss 2 major benefits of polymorphism .  For the response post, choose one of your classmates posts and discuss a possible downside to one of the benefits they mentioned.  Be sure to be in depth and support your posts with justifications. -->
