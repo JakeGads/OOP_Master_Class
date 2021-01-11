@@ -20,5 +20,10 @@ namespace Final
             this.Hourly_Rate = 0;
             this.Hours_Worked = 0;
         }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}|{this.Hourly_Rate:N2}|{this.Hours_Worked:N2}";
+        }
     }
 }

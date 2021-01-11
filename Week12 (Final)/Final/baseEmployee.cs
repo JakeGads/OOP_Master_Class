@@ -15,7 +15,6 @@ namespace Final
             this.Name = Name;
             this.Email = Email;
             this.Address = Address;
-            this.Address = Address;
         }
 
         public baseEmployee()
@@ -23,6 +22,11 @@ namespace Final
             this.Name = "";
             this.Email = "";
             this.Address = "";
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Name}|{this.Email}|{this.Address}";
         }
     }
 }
