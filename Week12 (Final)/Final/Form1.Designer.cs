@@ -29,13 +29,17 @@ namespace Final
         /// </summary>
         private void InitializeComponent()
         {
-            this.outJson = new System.Windows.Forms.TabControl();
+            this.Tabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.InTxt = new System.Windows.Forms.Button();
             this.InJson = new System.Windows.Forms.Button();
+            this.OutTab = new System.Windows.Forms.TabPage();
+            this.WriteTxtBtn = new System.Windows.Forms.Button();
+            this.WriteJsonBtn = new System.Windows.Forms.Button();
             this.OutTabControl = new System.Windows.Forms.TabPage();
-            this.OutTxt = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.OutTxt = new System.Windows.Forms.Button();
             this.EmployeeDataGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuperRadio = new System.Windows.Forms.RadioButton();
@@ -61,8 +65,11 @@ namespace Final
             this.medAccessRadio = new System.Windows.Forms.RadioButton();
             this.lowAccessRadio = new System.Windows.Forms.RadioButton();
             this.SubmitBtn = new System.Windows.Forms.Button();
-            this.outJson.SuspendLayout();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.Tabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.OutTab.SuspendLayout();
             this.OutTabControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -72,15 +79,15 @@ namespace Final
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // outJson
+            // Tabs
             // 
-            this.outJson.Controls.Add(this.tabPage1);
-            this.outJson.Controls.Add(this.OutTabControl);
-            this.outJson.Location = new System.Drawing.Point(12, 12);
-            this.outJson.Name = "outJson";
-            this.outJson.SelectedIndex = 0;
-            this.outJson.Size = new System.Drawing.Size(154, 91);
-            this.outJson.TabIndex = 0;
+            this.Tabs.Controls.Add(this.tabPage1);
+            this.Tabs.Controls.Add(this.OutTab);
+            this.Tabs.Location = new System.Drawing.Point(12, 12);
+            this.Tabs.Name = "Tabs";
+            this.Tabs.SelectedIndex = 0;
+            this.Tabs.Size = new System.Drawing.Size(154, 91);
+            this.Tabs.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -102,6 +109,7 @@ namespace Final
             this.InTxt.TabIndex = 1;
             this.InTxt.Text = "Load TXT";
             this.InTxt.UseVisualStyleBackColor = true;
+            this.InTxt.Click += new System.EventHandler(this.InTxt_Click);
             // 
             // InJson
             // 
@@ -111,11 +119,45 @@ namespace Final
             this.InJson.TabIndex = 0;
             this.InJson.Text = "Load JSON";
             this.InJson.UseVisualStyleBackColor = true;
+            this.InJson.Click += new System.EventHandler(this.InJson_Click);
+            // 
+            // OutTab
+            // 
+            this.OutTab.Controls.Add(this.WriteTxtBtn);
+            this.OutTab.Controls.Add(this.WriteJsonBtn);
+            this.OutTab.Location = new System.Drawing.Point(4, 24);
+            this.OutTab.Name = "OutTab";
+            this.OutTab.Padding = new System.Windows.Forms.Padding(3);
+            this.OutTab.Size = new System.Drawing.Size(146, 63);
+            this.OutTab.TabIndex = 1;
+            this.OutTab.Text = "Output";
+            this.OutTab.UseVisualStyleBackColor = true;
+            // 
+            // WriteTxtBtn
+            // 
+            this.WriteTxtBtn.Location = new System.Drawing.Point(4, 33);
+            this.WriteTxtBtn.Name = "WriteTxtBtn";
+            this.WriteTxtBtn.Size = new System.Drawing.Size(139, 23);
+            this.WriteTxtBtn.TabIndex = 1;
+            this.WriteTxtBtn.Text = "Write TXT";
+            this.WriteTxtBtn.UseVisualStyleBackColor = true;
+            this.WriteTxtBtn.Click += new System.EventHandler(this.WriteTxtBtn_Click);
+            // 
+            // WriteJsonBtn
+            // 
+            this.WriteJsonBtn.Location = new System.Drawing.Point(4, 4);
+            this.WriteJsonBtn.Name = "WriteJsonBtn";
+            this.WriteJsonBtn.Size = new System.Drawing.Size(139, 23);
+            this.WriteJsonBtn.TabIndex = 0;
+            this.WriteJsonBtn.Text = "Write JSON";
+            this.WriteJsonBtn.UseVisualStyleBackColor = true;
+            this.WriteJsonBtn.Click += new System.EventHandler(this.WriteJsonBtn_Click);
             // 
             // OutTabControl
             // 
-            this.OutTabControl.Controls.Add(this.OutTxt);
             this.OutTabControl.Controls.Add(this.button2);
+            this.OutTabControl.Controls.Add(this.button1);
+            this.OutTabControl.Controls.Add(this.OutTxt);
             this.OutTabControl.Location = new System.Drawing.Point(4, 24);
             this.OutTabControl.Name = "OutTabControl";
             this.OutTabControl.Padding = new System.Windows.Forms.Padding(3);
@@ -123,6 +165,24 @@ namespace Final
             this.OutTabControl.TabIndex = 1;
             this.OutTabControl.Text = "Output";
             this.OutTabControl.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(405, 128);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(405, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // OutTxt
             // 
@@ -133,22 +193,13 @@ namespace Final
             this.OutTxt.Text = "Write TXT";
             this.OutTxt.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Write JSON";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // EmployeeDataGrid
             // 
             this.EmployeeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmployeeDataGrid.Location = new System.Drawing.Point(16, 344);
+            this.EmployeeDataGrid.Location = new System.Drawing.Point(12, 344);
             this.EmployeeDataGrid.Name = "EmployeeDataGrid";
             this.EmployeeDataGrid.RowTemplate.Height = 25;
-            this.EmployeeDataGrid.Size = new System.Drawing.Size(776, 302);
+            this.EmployeeDataGrid.Size = new System.Drawing.Size(780, 302);
             this.EmployeeDataGrid.TabIndex = 1;
             // 
             // panel1
@@ -171,6 +222,7 @@ namespace Final
             this.SuperRadio.TabStop = true;
             this.SuperRadio.Text = "Super";
             this.SuperRadio.UseVisualStyleBackColor = true;
+            this.SuperRadio.CheckedChanged += new System.EventHandler(this.SuperRadio_CheckedChanged);
             // 
             // AdvancedRadio
             // 
@@ -182,6 +234,7 @@ namespace Final
             this.AdvancedRadio.TabStop = true;
             this.AdvancedRadio.Text = "Advanced";
             this.AdvancedRadio.UseVisualStyleBackColor = true;
+            this.AdvancedRadio.CheckedChanged += new System.EventHandler(this.AdvancedRadio_CheckedChanged);
             // 
             // BasicRadio
             // 
@@ -193,6 +246,7 @@ namespace Final
             this.BasicRadio.TabStop = true;
             this.BasicRadio.Text = "Basic";
             this.BasicRadio.UseVisualStyleBackColor = true;
+            this.BasicRadio.CheckedChanged += new System.EventHandler(this.BasicRadio_CheckedChanged);
             // 
             // BasicPanel
             // 
@@ -377,6 +431,11 @@ namespace Final
             this.SubmitBtn.TabIndex = 6;
             this.SubmitBtn.Text = "Submit";
             this.SubmitBtn.UseVisualStyleBackColor = true;
+            this.SubmitBtn.Click += new System.EventHandler(this.SubmitBtn_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -389,11 +448,12 @@ namespace Final
             this.Controls.Add(this.BasicPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.EmployeeDataGrid);
-            this.Controls.Add(this.outJson);
+            this.Controls.Add(this.Tabs);
             this.Name = "Form1";
             this.Text = " ";
-            this.outJson.ResumeLayout(false);
+            this.Tabs.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.OutTab.ResumeLayout(false);
             this.OutTabControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGrid)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -412,13 +472,13 @@ namespace Final
 
         #endregion
 
-        private System.Windows.Forms.TabControl outJson;
+        private System.Windows.Forms.TabControl Tabs;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button InTxt;
         private System.Windows.Forms.Button InJson;
         private System.Windows.Forms.TabPage OutTabControl;
         private System.Windows.Forms.Button OutTxt;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button OutJson;
         private System.Windows.Forms.DataGridView EmployeeDataGrid;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton BasicRadio;
@@ -444,6 +504,13 @@ namespace Final
         private System.Windows.Forms.RadioButton medAccessRadio;
         private System.Windows.Forms.RadioButton lowAccessRadio;
         private System.Windows.Forms.Button SubmitBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage OutTab;
+        private System.Windows.Forms.Button WriteTxtBtn;
+        private System.Windows.Forms.Button WriteJsonBtn;
     }
 }
 
