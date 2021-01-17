@@ -17,19 +17,42 @@ namespace Gadaleta_4_12
         public Form1()
         {
             InitializeComponent();
-            
+            GenerateDataGridView();
         }
 
-        private void create_workshop_chart(DataGridView dg, Workshop[] workshops)
+        private void GenerateDataGridView()
         {
-            for (int i = 0; i < workshops.Length; i++)
+            this.WorkshopDataGrid.DataSource = workshops;
+            this.CityDataGrid.DataSource = cities;
+
+            this.WorkshopDataGrid.Columns["fee"].DefaultCellStyle.Format = "c";
+            this.WorkshopDataGrid.Columns["Name"].Width += 20;
+            this.CityDataGrid.Columns["fee"].DefaultCellStyle.Format = "c";
+        }
+
+        private void calc_total()
+        {
+            var city = cities[0];
+            var workshop = workshops[0];
+
+            try
             {
-                var bttn = new DataGridViewButtonCell();
-                dg.Rows[i].Cells[0] = bttn;
-                dg.Rows[i].Cells[1].Tag = workshops[i].name;
-                dg.Rows[i].Cells[2].Tag = workshops[i].length;
-                dg.Rows[i].Cells[3].Tag = workshops[i].fee;
+                city = cities[CityDataGrid.CurrentCell.RowIndex];
+                workshop = workshops[WorkshopDataGrid.CurrentCell.RowIndex];
             }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine(e);
+            }
+            
+            this.CityFeeTB.Text = String.Format("${0:N2}", city.Fee);
+            this.WorkshopCostTB.Text = String.Format("${0:N2}", workshop.Fee);
+            this.TotalTB.Text = String.Format("${0:N2}", workshop.Fee);
+        }
+
+        private void DataGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            calc_total();
         }
     }
 }

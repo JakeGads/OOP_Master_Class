@@ -6,20 +6,20 @@ namespace Gadaleta_4_12
 {
     class Workshop
     {
-        public String name { get; set; }
-        public int length { get; set; }
-        public double fee { get; set; }
+        public String Name { get; set; }
+        public int Length { get; set; }
+        public double Fee { get; set; }
 
         public Workshop(String name, int length, double fee)
         {
-            this.name = name;
-            this.length = length;
-            this.fee = fee;
+            this.Name = name;
+            this.Length = length;
+            this.Fee = fee;
         }
 
         public double get_cost(double city_cost)
         {
-            return this.fee + (city_cost * this.fee);
+            return this.Fee + (city_cost * this.Fee);
         }
     }
 }

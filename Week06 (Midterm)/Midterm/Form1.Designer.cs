@@ -36,10 +36,9 @@ namespace Midterm
             this.Add_Cost_Tf = new System.Windows.Forms.TextBox();
             this.Month_cb = new System.Windows.Forms.ComboBox();
             this.Data_gb = new System.Windows.Forms.GroupBox();
-            this.Output_gb = new System.Windows.Forms.GroupBox();
             this.finalize_btn = new System.Windows.Forms.Button();
+            this.Output_gb = new System.Windows.Forms.GroupBox();
             this.Setup_gb.SuspendLayout();
-            this.Data_gb.SuspendLayout();
             this.SuspendLayout();
             // 
             // Setup_gb
@@ -116,13 +115,22 @@ namespace Midterm
             // 
             // Data_gb
             // 
-            this.Data_gb.Controls.Add(this.finalize_btn);
             this.Data_gb.Location = new System.Drawing.Point(415, 13);
             this.Data_gb.Name = "Data_gb";
-            this.Data_gb.Size = new System.Drawing.Size(373, 739);
+            this.Data_gb.Size = new System.Drawing.Size(373, 712);
             this.Data_gb.TabIndex = 1;
             this.Data_gb.TabStop = false;
             this.Data_gb.Text = "Data Entry";
+            // 
+            // finalize_btn
+            // 
+            this.finalize_btn.Location = new System.Drawing.Point(567, 731);
+            this.finalize_btn.Name = "finalize_btn";
+            this.finalize_btn.Size = new System.Drawing.Size(75, 23);
+            this.finalize_btn.TabIndex = 0;
+            this.finalize_btn.Text = "Finalize";
+            this.finalize_btn.UseVisualStyleBackColor = true;
+            this.finalize_btn.Click += new System.EventHandler(this.finalize_btn_Click_1);
             // 
             // Output_gb
             // 
@@ -133,21 +141,12 @@ namespace Midterm
             this.Output_gb.TabStop = false;
             this.Output_gb.Text = " Final Info";
             // 
-            // finalize_btn
-            // 
-            this.finalize_btn.Location = new System.Drawing.Point(153, 710);
-            this.finalize_btn.Name = "finalize_btn";
-            this.finalize_btn.Size = new System.Drawing.Size(75, 23);
-            this.finalize_btn.TabIndex = 0;
-            this.finalize_btn.Text = "Finalize";
-            this.finalize_btn.UseVisualStyleBackColor = true;
-            this.finalize_btn.Click += new System.EventHandler(this.finalize_btn_Click_1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 764);
+            this.Controls.Add(this.finalize_btn);
             this.Controls.Add(this.Output_gb);
             this.Controls.Add(this.Data_gb);
             this.Controls.Add(this.Setup_gb);
@@ -155,7 +154,6 @@ namespace Midterm
             this.Text = "Form1";
             this.Setup_gb.ResumeLayout(false);
             this.Setup_gb.PerformLayout();
-            this.Data_gb.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

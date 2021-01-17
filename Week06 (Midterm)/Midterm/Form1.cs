@@ -170,10 +170,6 @@ namespace Midterm
             // clearing in case there is new data to present
             clear_gb(this.Output_gb);
 
-            // wipes out assinged controls
-            this.Output_gb.Controls.Clear();
-
-
             // deep copy the dictonary
             // so they are sorted chronologically 
             Dictionary<string, double> sorted_months = new Dictionary<string, double>();
@@ -267,24 +263,7 @@ namespace Midterm
 
         private void clear_gb(GroupBox gb)
         {
-            // goes through each type and removes the Panel/TextBox/Label
-            foreach (var i in gb.Controls.OfType<Panel>())
-            {
-                i.Visible = false;
-                gb.Controls.Remove(i);
-            }
-
-            foreach (var i in gb.Controls.OfType<TextBox>())
-            {
-                i.Visible = false;
-                gb.Controls.Remove(i);
-            }
-
-            foreach (var i in gb.Controls.OfType<Label>())
-            {
-                i.Visible = false;
-                gb.Controls.Remove(i);
-            }
+            gb.Controls.Clear();
         }
 
         private void finalize_btn_Click_1(object sender, EventArgs e)
