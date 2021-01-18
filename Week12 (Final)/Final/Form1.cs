@@ -191,48 +191,64 @@ namespace Final
 
         private void SubmitBtn_Click(object sender, EventArgs e)
         {
-            var hours = tb_parser(this.HoursTB.Text);
-            var hour_rate = tb_parser(this.HourlRateTB.Text);
+            
 
             if (BasicRadio.Checked)
             {
-                Emps.Add(
-                    new baseEmployee(
-                        this.NameTB.Text,
-                        this.EmailTB.Text,
-                        this.AddressTB.Text
-                    ));
+                Emps.Add(makeBasic());
             }
             else if (AdvancedRadio.Checked)
             {
-                
-                var message = "";
-                bool hour_check = (hours < 0 || hours > 80);
-                bool rate_check = (hour_rate < 10 || hour_rate > 42.5);
-                bool both = hour_check && rate_check; 
-                
-                if(!hour_check)
-                {
-                    message += "ERROR: Hour must be between 0 & 80";
-                }
-                if (!both)
-                {
-                    message += "\nand\n";
-                }
-                if (!rate_check)
-                {
-                    message += "ERROR: Hour Rate must be between $10 & $42.50";
-                }
-
-                if (message.Equals(""))
-                {
-
-                }
+                Emps.Add(makeAdvanced());
+               
             }
             else
             {
 
             }
+        }
+
+        private object makeAdvanced()
+        {
+            var hours = tb_parser(this.HoursTB.Text);
+            var hour_rate = tb_parser(this.HourlRateTB.Text);
+
+            var message = "";
+            bool hour_check = (hours < 0 || hours > 80);
+            bool rate_check = (hour_rate < 10 || hour_rate > 42.5);
+            bool both = hour_check && rate_check;
+
+            if (!hour_check)
+            {
+                message += "ERROR: Hour must be between 0 & 80";
+            }
+            if (!both)
+            {
+                message += "\nand\n";
+            }
+            if (!rate_check)
+            {
+                message += "ERROR: Hour Rate must be between $10 & $42.50";
+            }
+
+            if (message.Equals(""))
+            {
+                var basic = makeBasic();
+                return new advancedEmployee(basic.Name)
+            }
+            else
+            {
+                MessageBox.Show(message, "Error");
+            }
+        }
+
+        private object makeBasic()
+        {
+            return new baseEmployee(
+                        this.NameTB.Text,
+                        this.EmailTB.Text,
+                        this.AddressTB.Text
+                    );
         }
     }
 }
